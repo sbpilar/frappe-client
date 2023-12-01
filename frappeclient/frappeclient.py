@@ -32,6 +32,7 @@ class FrappeClient(object):
 	def __init__(self, url=None, username=None, password=None, api_key=None, api_secret=None, verify=True):
 		self.headers = dict(Accept='application/json')
 		self.session = requests.Session()
+		self.session.verify = verify
 		self.can_download = []
 		self.verify = verify
 		self.url = url
